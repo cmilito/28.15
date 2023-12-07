@@ -133,19 +133,15 @@ int main() {
    string playlistTitle;
    char option;
    PlaylistNode* headNode = nullptr;
-
+   
    cout << "Enter playlist's title:\n" << endl;
    getline(cin >> ws, playlistTitle);
+   PrintMenu(playlistTitle);
+   cout << "\nChoose an option:" << endl;
+   cin >> option;
 
-    while (true) {
-      PrintMenu(playlistTitle);
-      cout << "\nChoose an option:" << endl;
-      cin >> option;
-      if (option == 'q') {
-         break;  // Exit the loop if the user chooses to quit
-      }
-      headNode = ExecuteMenu(option, playlistTitle, headNode);
-   }
+   ExecuteMenu(option, playlistTitle, headNode);
 
+   
    return 0;
 }
