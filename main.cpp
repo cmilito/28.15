@@ -26,8 +26,7 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
          
          cout << "ADD SONG" << endl;
          cout << "Enter song's unique ID:" << endl;
-         cin >> id;
-         cin.ignore();
+         getline(cin, id);
          cout << "Enter song's name:" << endl;
          getline(cin, songName);
          cout << "Enter artist's name:" << endl;
