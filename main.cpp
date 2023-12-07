@@ -1,3 +1,6 @@
+
+Christopher Milito
+
 #include <iostream>
 #include <string>
 #include "PlaylistNode.h"
