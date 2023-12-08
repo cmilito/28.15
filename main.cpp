@@ -109,22 +109,23 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
          PlaylistNode* currentNode = headNode;
          int i = 1;
          string artistName;
-         
+
          cout << "OUTPUT SONGS BY SPECIFIC ARTIST" << endl;
          cout << "Enter artist's name:" << endl;
+         cin.ignore();
          getline(cin, artistName);
-         
-         while(currentNode != headNode){
-            if(currentNode->GetArtistName() == artistName){
+
+         while (currentNode != nullptr) {
+            if (currentNode->GetArtistName() == artistName) {
                cout << i << "." << endl;
                currentNode->PrintPlaylistNode();
+               cout << endl;
+               ++i;
             }
-            
-            ++i;
-            currentNode = currentNode->GetNext();
+         currentNode = currentNode->GetNext();
          }
          break;
-      }
+   }
       else if(option == 'q'){
          break;
       }    
