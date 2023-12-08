@@ -86,32 +86,28 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       else if (option == 'o'){
          int i = 1;
          PlaylistNode* currentNode = headNode;
-      
          cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
-      
+
          if (headNode == nullptr) {
-            cout << "Playlist is empty" << endl;
-            break;
+            cout << "Playlist is empty\n" << endl;
          }
          else {
             while (currentNode != nullptr) {
                cout << i << "." << endl;
                currentNode->PrintPlaylistNode();
                cout << endl;
-                  
                currentNode = currentNode->GetNext();
                ++i;
             }
          }
-         
-      }
+   }
       else if(option == 's'){
          PlaylistNode* currentNode = headNode;
          int i = 1;
          string artistName;
 
          cout << "OUTPUT SONGS BY SPECIFIC ARTIST" << endl;
-         cout << "Enter artist's name:" << endl;
+         cout << "Enter artist's name:\n" << endl;
          cin.ignore();
          getline(cin, artistName);
 
@@ -120,11 +116,10 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
                cout << i << "." << endl;
                currentNode->PrintPlaylistNode();
                cout << endl;
-               ++i;
             }
+          ++i;
          currentNode = currentNode->GetNext();
          }
-         break;
    }
       else if(option == 'q'){
          break;
