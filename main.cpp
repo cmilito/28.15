@@ -19,7 +19,8 @@ void PrintMenu(const string playlistTitle) {
 }
 
 PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headNode) {
-   while (option != 'q'){
+   while (option != 'q') {
+      cin.ignore();
       if (option == 'a'){
          string id, songName, artistName;
          int songLength;
@@ -108,7 +109,7 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 
          cout << "OUTPUT SONGS BY SPECIFIC ARTIST" << endl;
          cout << "Enter artist's name:\n" << endl;
-         cin.ignore();
+         cin >> ws;
          getline(cin, artistName);
 
          while (currentNode != nullptr) {
@@ -124,7 +125,6 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       else if(option == 'q'){
          break;
       }    
-      
       PrintMenu(playlistTitle);
       cout << "\nChoose an option:" << endl;
       cin >> option;
